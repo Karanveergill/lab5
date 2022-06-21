@@ -1,22 +1,3 @@
-<?php
-
-$username   = '';
-$email      = '';
-$remember   = '';
-
-if (isset($_COOKIE['username'])) {
-    $username = $_COOKIE['username'];
-}
-
-if (isset($_COOKIE['email'])) {
-    $email = $_COOKIE['email'];
-}
-
-if (isset($_COOKIE['remember'])) {
-    $remember = 'checked';
-}
-
-?>
 <!DOCTYPE html>
 <html>
 
@@ -44,7 +25,7 @@ if (isset($_COOKIE['remember'])) {
                             <form name="signup" role="form" action="results.php" method="post">
                                 <fieldset>
                                     <div class="form-group">
-                                        <input class="form-control" name="className" placeholder="ex. COMP 3015" type="text" value="<?php echo $username; ?>" />
+                                        <input class="form-control" name="className" placeholder="ex. COMP 3015" type="text" />
                                         <input type="submit" class="btn btn-sm btn-success btn-block" value="Add" />
                                     </div>
                                     <div class="form-group medium">
