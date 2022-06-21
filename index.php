@@ -41,7 +41,7 @@
                                             <label for="remember" class=" ">
                                                 Remember Me
                                             </label>
-                                            <input type="checkbox" name="remember" value="remember" <?php echo $remember; ?> />
+                                            <input type="checkbox" name="remember" value="remember" />
                                         </div> -->
                                     <!-- </div>
                         <input type="submit" class="btn btn-lg btn-info btn-block" value="Sign Up!" /> -->
