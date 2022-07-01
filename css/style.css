@@ -301,6 +301,12 @@ table.dataTable thead .sorting:after {
     word-wrap: break-word;
 }
 
+.space{
+    width: 8px;
+    height: auto;
+    display: inline-block;
+}
+
 .medium {
     font-size: 26px;
     word-wrap: break-word;

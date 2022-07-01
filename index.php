@@ -2,45 +2,6 @@
 
 $contents = json_decode(file_get_contents('./courses.json'), true);
 
-// // Initialize JSON file 
-// if (!file_exists('courses.json')) {
-//     file_put_contents('courses.json', '[]');
-// }
-
-// // Now you are free to start writing and reading from your JSON file.
-
-// // Check if the request is coming in via POST.
-// // Do your processing up top above your HTML otherwise you can run into "Headers already sent..." errors.
-// if (isset($_POST['submit'])) {
-
-//     $input = json_decode(file_get_contents('courses.json'), true);
-//     print_r($input);
-
-//     // This is what the user typed in.
-//     $id = 0;
-//     $input = $_POST['className'];
-
-//     $courses[] = array(
-//         "id" => ++$id,
-//         "course" => $input
-//     );
-
-//     // Write the array back to the file.
-//     $courses = json_encode($courses, JSON_PRETTY_PRINT);
-//     file_put_contents('courses.json', $courses);
-// }
-
-// // Finally, read out the latest contents from your file so your form has access to it.
-// $contents = file_get_contents('courses.json');
-// $dataFromFile = json_decode($contents, true);
-// $singleData = array_filter($dataFromFile, function ($var) use ($id) {
-//     return (!empty($var['id']) && $var['id'] == $id);
-// });
-// $singleData = array_values($singleData)[0];
-
-// // Delete button is clicked
-// if (isset($_POST['delete'])) {
-// }
 ?>
 
 <!DOCTYPE html>
@@ -76,20 +37,21 @@ $contents = json_decode(file_get_contents('./courses.json'), true);
                                 </fieldset>
                             </form>
                             <br>
-                            <?php foreach ($contents as $className => $className) : ?>
+                            <?php foreach ($contents as $className => $class) : ?>
                                 <div class="courses">
                                     <form style="display: inline" action="update.php" method="post">
                                         <input type="hidden" name="className" value="<?php echo $className ?>">
-                                        <input type="checkbox" name="status" value="1" <?php echo ($contents['completed'] ? 'checked' : '') ?>>
+                                        <input type="checkbox" name="status" value="1" <?php echo ($class['completed'] ? 'checked' : '') ?>>
                                     </form>
                                     <?php echo $className ?>
+                                    <div class="space">
+                                    </div>
                                     <form style="display: inline" action="delete.php" method="post">
                                         <input type="hidden" name="className" value="<?php echo $className ?>">
-                                        <button>Delete</button>
+                                        <button class="btn btn-sm btn-danger"> Delete</button>
                                     </form>
                                 </div>
                             <?php endforeach; ?>
-
                         </div>
                     </div>
                 </div>
