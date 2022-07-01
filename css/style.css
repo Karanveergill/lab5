@@ -288,6 +288,9 @@ table.dataTable thead .sorting:after {
     border: 1px solid #ddd;
     background-color: #eee!important;
 }
+.courses {
+    list-style-type: none;
+}
 
 .show-grid {
     margin: 15px 0;
