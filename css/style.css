@@ -290,6 +290,7 @@ table.dataTable thead .sorting:after {
 }
 .courses {
     list-style-type: none;
+    text-align: center;
 }
 
 .show-grid {

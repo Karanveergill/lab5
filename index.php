@@ -43,6 +43,8 @@ $contents = json_decode(file_get_contents('./courses.json'), true);
                                         <input type="hidden" name="className" value="<?php echo $className ?>">
                                         <input type="checkbox" name="status" value="1" <?php echo ($class['completed'] ? 'checked' : '') ?>>
                                     </form>
+                                    <div class="space">
+                                    </div>
                                     <?php echo $className ?>
                                     <div class="space">
                                     </div>
