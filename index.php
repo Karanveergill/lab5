@@ -53,6 +53,14 @@ $contents = json_decode(file_get_contents('./courses.json'), true);
                                         <input type="hidden" name="class_Name" value="<?php echo $className ?>">
                                         <button class="btn btn-sm btn-grey"> Edit</button>
                                     </form>
+                                    <form style="display: inline" action="coverimage.php" method="post">
+                                        <label class="custom-file-upload">
+                                            <input type="file" name="coverImage" />
+                                            Cover Image
+                                        </label>
+                                    </form>
+
+
                                 </div>
                             <?php endforeach; ?>
                         </div>
