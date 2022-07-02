@@ -29,28 +29,29 @@ $contents = json_decode(file_get_contents('./courses.json'), true);
                         </div>
                         <div class="panel-body">
                             <form name="addClass" role="form" action="newCourse.php" method="post">
-                                <fieldset>
-                                    <div class="form-group">
-                                        <input class="form-control" name="className" placeholder="ex. COMP 3015" type="text" />
-                                        <input type="submit" name="submit" class="btn btn-sm btn-success btn-block" value="Add" />
-                                    </div>
-                                </fieldset>
+                                <div class="form-group">
+                                    <input class="form-control" name="class_Name" placeholder="ex. COMP 3015" type="text" />
+                                    <input type="submit" name="submit" class="btn btn-sm btn-success btn-block" value="Add" />
+                                </div>
                             </form>
                             <br>
                             <?php foreach ($contents as $className => $class) : ?>
-                                <div class="courses">
-                                    <form style="display: inline" action="update.php" method="post">
-                                        <input type="hidden" name="className" value="<?php echo $className ?>">
+                                <div class="courses" style="margin-bottom: 20px;">
+                                    <form style=" display: inline" action="update.php" method="post">
+                                        <input type="hidden" name="class_Name" value="<?php echo $className ?>">
                                         <input type="checkbox" name="status" value="1" <?php echo ($class['completed'] ? 'checked' : '') ?>>
                                     </form>
                                     <div class="space">
                                     </div>
                                     <?php echo $className ?>
-                                    <div class="space">
-                                    </div>
+
                                     <form style="display: inline" action="delete.php" method="post">
-                                        <input type="hidden" name="className" value="<?php echo $className ?>">
+                                        <input type="hidden" name="class_Name" value="<?php echo $className ?>">
                                         <button class="btn btn-sm btn-danger"> Delete</button>
+                                    </form>
+                                    <form style="display: inline" action="edit.php" method="post">
+                                        <input type="hidden" name="class_Name" value="<?php echo $className ?>">
+                                        <button class="btn btn-sm btn-grey"> Edit</button>
                                     </form>
                                 </div>
                             <?php endforeach; ?>

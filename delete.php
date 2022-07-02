@@ -1,6 +1,6 @@
 <?php
 
-$className = $_POST['className'];
+$className = $_POST['class_Name'];
 
 $contents = json_decode(file_get_contents('./courses.json'), true);
 unset($contents[$className]);

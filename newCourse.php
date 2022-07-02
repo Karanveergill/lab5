@@ -1,9 +1,9 @@
 <?php
 
-$$contents = json_decode(file_get_contents('./courses.json'), true);
+$contents = json_decode(file_get_contents('./courses.json'), true);
 
-if (isset($_POST['className'])) {
-    $className = $_POST['className'];
+if (isset($_POST['class_Name'])) {
+    $className = $_POST['class_Name'];
     $contents[$className] = ['completed' => false];
 }
 

@@ -96,6 +96,7 @@ body {
     border-bottom: 1px solid #e7e7e7;
 }
 
+
 .sidebar ul li a.active {
     background-color: #eee;
 }
@@ -148,6 +149,10 @@ body {
 
 .btn-primary.btn-outline {
     color: #428bca;
+}
+
+.btn-grey.btn-outline {
+    color: #909294;
 }
 
 .btn-success.btn-outline {
